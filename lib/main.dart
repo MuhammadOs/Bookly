@@ -14,6 +14,7 @@ void main() async {
   final EasyLocalization easyLocalization = EasyLocalization(
     supportedLocales: const [Locale("en", "US"), Locale("ar", "EG")],
     path: "lib/config/resources",
+
     saveLocale: true,
     useOnlyLangCode: true,
     // Add this line to use only language code
