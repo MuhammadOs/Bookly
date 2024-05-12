@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-      const EdgeInsets.only(left: 20.0, right: 20, bottom: 10, top: 20),
+          const EdgeInsets.only(left: 20.0, right: 20, bottom: 10, top: 20),
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
@@ -33,10 +33,10 @@ class HomeViewBody extends StatelessWidget {
                 const Gap(30),
                 BlocProvider(
                   create: (context) =>
-                  GetPopularBooksCubit(getIt.get<HomeRepoImplemetation>())
-                    ..getPopularBooks(query: {'q': 'programming'}),
+                      GetPopularBooksCubit(getIt.get<HomeRepoImplemetation>())
+                        ..getPopularBooks(query: {'q': 'programming'}),
                   child:
-                  BlocBuilder<GetPopularBooksCubit, GetPopularBooksState>(
+                      BlocBuilder<GetPopularBooksCubit, GetPopularBooksState>(
                     builder: (context, state) {
                       var bloc = BlocProvider.of<GetPopularBooksCubit>(context);
                       if (state is GetPopularBooksLoading) {
@@ -54,9 +54,16 @@ class HomeViewBody extends StatelessWidget {
                   ),
                 ),
                 const Gap(30),
-                CustomHeadLineText(
-                  txt: "newestBooks".tr(),
+                Text(
+                  "newestBooks".tr(),
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      fontFamily: GoogleFonts.montserrat.toString(),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
                 ),
+                /*CustomHeadLineText(
+                  txt: "newestBooks".tr(),
+                ),*/
                 const Gap(20),
               ],
             ),
@@ -64,8 +71,8 @@ class HomeViewBody extends StatelessWidget {
           SliverFillRemaining(
             child: BlocProvider(
                 create: (context) =>
-                GetBestSellerBooksCubit(getIt.get<HomeRepoImplemetation>())
-                  ..getBestSellerBooks(),
+                    GetBestSellerBooksCubit(getIt.get<HomeRepoImplemetation>())
+                      ..getBestSellerBooks(),
                 child: const BookListViewItem()),
           )
         ],
