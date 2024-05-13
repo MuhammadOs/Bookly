@@ -4,4 +4,5 @@ class AppRoutes {
   static const String details = 'details';
   static const String search = 'search';
   static const String setting = 'setting';
+  static const String onBoarding = 'onboarding';
 }

@@ -16,8 +16,8 @@ void main() async {
     path: "lib/config/resources",
     saveLocale: true,
     useOnlyLangCode: true,
-    fallbackLocale: const Locale("ar", "EG"),
-    startLocale: const Locale("ar", "EG"),
+    fallbackLocale: const Locale("en", "US"),
+    startLocale: const Locale("en", "US"),
     child: const Bookly(),
   );
 
